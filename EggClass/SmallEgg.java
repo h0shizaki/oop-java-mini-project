@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class SmallEgg extends Egg {
-    Random rn = new Random(System.currentTimeMillis());
+    Random rn = new Random();
     public double ranDis = rn.nextInt(4) + 1.0 ;
 
     public SmallEgg(double dis) {
@@ -19,7 +19,7 @@ public class SmallEgg extends Egg {
 
     @Override
     public String getEggInfo() {
-        return ("Egg size : Small egg \nEgg Distance: " + super.getEggDistance() + "\nCurrent Distance: "
+        return ("Egg size : Small egg \nEgg Distance: " + super.getEggDistance() + " km\nCurrent Distance: "
                 + super.getCurrentEggDistance());
     }
 
@@ -28,13 +28,13 @@ public class SmallEgg extends Egg {
     public String eggHatch() {
         File file = new File("PokemonList/SmallPokemonList.txt");
 
-        Vector<String> list = readSmallPokemonList(file);
+        Vector<String> list = readPokemonList(file);
 
         return list.get(rn.nextInt(list.size()));
     }
 
     //Read pokemon size small 
-    private Vector<String> readSmallPokemonList(File file) {
+    private Vector<String> readPokemonList(File file) {
         Vector<String> list = new Vector<>();
         try {
             Scanner in = new Scanner(file);
