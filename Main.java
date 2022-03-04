@@ -64,6 +64,12 @@ public class Main {
                     System.out.println("Your queue is empty\n");
                     break;
                 }
+
+                default: {
+                    System.out.println("You enter wrong input");
+                    break;
+                }
+
             }
 
         }
