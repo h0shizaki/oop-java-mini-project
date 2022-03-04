@@ -3,15 +3,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.* ;
 
-public class MeduimEgg extends Egg {
+public class MediumEgg extends Egg {
     Random rn = new Random();
     public double ranDis = rn.nextInt(4) + 5 ;
 
-    public MeduimEgg(double dis) {
+    public MediumEgg(double dis) {
         super(dis);
     }
 
-    public MeduimEgg() {
+    public MediumEgg() {
         super();
         // assign random egg distance between 5.0 to 9.0 
         super.setEggDistance(ranDis);
@@ -26,7 +26,7 @@ public class MeduimEgg extends Egg {
     //Randomly return pokemon name from the list
     @Override
     public String eggHatch() {
-        File file = new File("PokemonList/MeduimPokemonList.txt");
+        File file = new File("PokemonList/MediumPokemonList.txt");
 
         Vector<String> list = readPokemonList(file);
 
